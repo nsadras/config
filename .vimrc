@@ -16,6 +16,9 @@ Plugin 'sjl/gundo.vim'
 Plugin 'tyru/open-browser.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ck.vim'
+Plugin 'reedes/vim-pencil'
+Plugin 'mikewest/vimroom'
+Plugin 'tpope/vim-markdown'
 
 call vundle#end()
 filetype plugin indent on
@@ -26,10 +29,12 @@ set wildmode=longest:full
 set wildmenu
 set number
 
+"Mappings
 nnoremap <F5> :GundoToggle<CR>
 nnoremap ; :
 imap jk <Esc>
-imap ul <Esc>yypVr=i
+imap jj <Esc>yypVr=i
+"
 "Change tab to 4 spaces 
 set tabstop=4
 set expandtab
@@ -39,15 +44,23 @@ set autoindent
 set smartindent
 
 set t_Co=256
-
 set relativenumber
+
+"gundo
 set undofile
 set undodir=~/.vim/genfiles/undo
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
 
-"Bracket autocomplete
-"inoremap { {<CR>}<Esc>O<TAB>
-"inoremap { {}<Esc><h> 
+let g:pencil#wrapModeDefault = 'soft'
+augroup pencil
+    autocmd!
+    autocmd FileType markdown,mkd   call pencil#init()
+    autocmd FileType text,txt       call pencil#init() 
+augroup END
+
+au FileType text set norelativenumber nonumber
+au FileType markdown set norelativenumber nonumber
+
 "Color scheme
 colo molokai
