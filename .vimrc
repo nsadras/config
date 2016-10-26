@@ -1,6 +1,7 @@
 set nocompatible
 filetype off
 
+"Vundle plugins
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -16,6 +17,7 @@ Plugin 'sjl/gundo.vim'
 Plugin 'tyru/open-browser.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ck.vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'reedes/vim-pencil'
 Plugin 'reedes/vim-colors-pencil'
 Plugin 'tpope/vim-markdown'
@@ -24,18 +26,22 @@ Plugin 'junegunn/goyo.vim'
 call vundle#end()
 filetype plugin indent on
 
+"Basic Settings
 syntax on
+set hidden
+set t_Co=256
+set number
+set relativenumber
 
 set wildmode=longest:full
 set wildmenu
-set number
 
 "Mappings
 nnoremap <F5> :GundoToggle<CR>
 nnoremap ; :
 imap jk <Esc>
 imap jj <Esc>yypVr=i
-"
+
 "Change tab to 4 spaces 
 set tabstop=4
 set expandtab
@@ -43,9 +49,6 @@ set shiftwidth=4
 set smarttab
 set autoindent
 set smartindent
-
-set t_Co=256
-set relativenumber
 
 "gundo
 set undofile
