@@ -17,8 +17,9 @@ Plugin 'tyru/open-browser.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ck.vim'
 Plugin 'reedes/vim-pencil'
-Plugin 'mikewest/vimroom'
+Plugin 'reedes/vim-colors-pencil'
 Plugin 'tpope/vim-markdown'
+Plugin 'junegunn/goyo.vim'
 
 call vundle#end()
 filetype plugin indent on
