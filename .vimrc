@@ -63,8 +63,8 @@ augroup pencil
     autocmd FileType text,txt       call pencil#init() 
 augroup END
 
-au FileType text set norelativenumber nonumber
-au FileType markdown set norelativenumber nonumber
+au FileType text set norelativenumber nonumber | Goyo 100
+au FileType markdown set norelativenumber nonumber | Goyo 100
 
 "Color scheme
 colo molokai
